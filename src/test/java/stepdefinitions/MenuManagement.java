@@ -14,16 +14,19 @@ public class MenuManagement {
 	@Given("I have menu item with name {string} with price {int}")
 	public void i_have_menu_item_with_name_with_price(String newMenuname, int price) {
 	    restaurantMenuitem = new RestaurantMenuItem(newMenuname, "", price);
+	    System.out.println("Step 1");
 	}
 
 	@When("I add that menu item")
 	public void i_add_that_menu_item() {
 	   menu.addMenuItem(restaurantMenuitem);
+	   System.out.println("Step 2");
 	}
 
 	@Then("menu item with name {string} should be added")
 	public void menu_item_with_name_should_be_added(String string) {
 	    boolean exist = menu.DoesItemExist(restaurantMenuitem);
+	    System.out.println("Step 3");
 	    System.out.println("Menu Exist : "+exist);
 	}
 	

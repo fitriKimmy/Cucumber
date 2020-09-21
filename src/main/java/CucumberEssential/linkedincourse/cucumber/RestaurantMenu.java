@@ -8,7 +8,10 @@ public class RestaurantMenu {
 
 	
 	public boolean addMenuItem(RestaurantMenuItem newMenuItem) {
-				return MenuItems.add(newMenuItem);
+		if(DoesItemExist(newMenuItem)) {
+			throw new IllegalArgumentException("Duplicate Item");
+		}
+			return MenuItems.add(newMenuItem);
 	}
 	
 	public boolean DoesItemExist(RestaurantMenuItem newMenuItem) {
@@ -18,4 +21,5 @@ public class RestaurantMenu {
 		}
 		return Exists;
 	}
+
 }

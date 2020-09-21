@@ -8,8 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/main/java/CucumberEssential/linkedincourse/cucumber/features/MenuManagement.feature",
-		glue = "stepdefinitions",
-		tags= "not @NightlyBuild",
+		glue = {"stepdefinitions","hooks"},
 		plugin = "pretty"
 		)
 public class MenuManagementTest {
