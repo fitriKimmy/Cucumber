@@ -9,7 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = "src/main/java/CucumberEssential/linkedincourse/cucumber/features/MenuManagement.feature",
 		glue = "stepdefinitions",
-		plugin = {"pretty"}
+		tags= "not @NightlyBuild",
+		plugin = "pretty"
 		)
 public class MenuManagementTest {
 

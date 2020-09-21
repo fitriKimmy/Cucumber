@@ -18,7 +18,20 @@
 #Sample Feature Definition Template
 Feature: Menu Management
 
+@SmokeTest
 Scenario: Add menu Item
 Given I have menu item with name "Cucumber Sandwich" with price 20
+When I add that menu item
+Then menu item with name "Cucumber Sandwich" should be added
+
+@RegularTest
+Scenario: Add second menu Item
+Given I have menu item with name "Chicken Sandwich" with price 25
+When I add that menu item
+Then menu item with name "Cucumber Sandwich" should be added
+
+@RegularTest @NightlyBuild
+Scenario: Add third menu Item
+Given I have menu item with name "Chicken Tuna Sandwich" with price 30
 When I add that menu item
 Then menu item with name "Cucumber Sandwich" should be added
